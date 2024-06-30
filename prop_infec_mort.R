@@ -3,13 +3,11 @@ library(tidyverse)
 library(ggplot2)
 
 deathtoll <- data.frame(
-  "I_0" = c(
-    seq(from = 0.01, to = 1, by = 0.01),
-    "mu", "rho", "iota"
-  )
+  "I_0" = c(seq(from = 0.01, to = 1, by = 0.01))
 )
 
 for (j in 1:1000) {
+
   set.seed(j)
   
   mu <- runif(1, 0, 1)
@@ -38,22 +36,16 @@ for (j in 1:1000) {
       
   }
   
-  deathtoll[101, j + 1] <- mu
-  deathtoll[102, j + 1] <- rho
-  deathtoll[103, j + 1] <- iota
-    
+  k <- paste(
+    "iota = ", round(iota,digits = 3),
+    ", rho = ", round(rho,digits = 3),
+    ", mu = ", round(mu,digits = 3),
+    sep=""
+  )
+  
+  ggplot(
+    data=deathtoll, aes(x=I_0, y=deathtoll[,j+1], group=1)
+  ) + geom_line() + xlab(paste("I(0); ", k,sep = "")) +
+    ylab("D(1,000)") + theme_classic()
+  
 }
-
-ggplot(data=deathtoll[1:100,], aes(x=I_0, y=V2, group=1)) + 
-  geom_line() + scale_x_discrete(breaks = seq(0, 1, by = .10)) +
-  xlab("I(0), mu = 0.266, rho = 0.372, iota = 0.573") +
-  ylab("D(1,000)") + theme_classic()
-
-ggplot(data=deathtoll[1:100,], aes(x=I_0, y=V3, group=1)) + 
-  geom_line() + scale_x_discrete(breaks = seq(0, 1, by = .10)) +
-  xlab("I(0), mu = 0.185, rho = 0.702, iota = 0.573") +
-  ylab("") + theme_classic()
-
-# ...
-
-
