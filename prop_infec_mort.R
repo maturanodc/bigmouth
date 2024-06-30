@@ -44,12 +44,12 @@ for (j in 1:1000) {
     
 }
 
-ggplot(data=df[1:100,], aes(x=I_0, y=V2, group=1)) + 
+ggplot(data=deathtoll[1:100,], aes(x=I_0, y=V2, group=1)) + 
   geom_line() + scale_x_discrete(breaks = seq(0, 1, by = .10)) +
   xlab("I(0), mu = 0.266, rho = 0.372, iota = 0.573") +
   ylab("D(infinty)") + theme_classic()
 
-ggplot(data=df[1:100,], aes(x=I_0, y=V3, group=1)) + 
+ggplot(data=deathtoll[1:100,], aes(x=I_0, y=V3, group=1)) + 
   geom_line() + scale_x_discrete(breaks = seq(0, 1, by = .10)) +
   xlab("I(0), mu = 0.185, rho = 0.702, iota = 0.573") +
   ylab("D(infinty)") + theme_classic()
