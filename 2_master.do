@@ -41,7 +41,7 @@ do "${dof}dataframe_construction.do"
 tables.do uses dataset.dta in /main/ to create Tables 1 to 10, A1 to A5, and
 C1 and C2 in /tables/.
 ------------------------------------------------------------------------------*/
-do "${dofiles}tables.do"
+do "${dof}tables.do"
 
 
 **# Plots
@@ -51,6 +51,6 @@ Figures 1 and 3a to 3d in /figures/; uses SIRDA.dta in /main/ to create Figures
 C1a and C1c in /figures/; uses SIRDB.dta in /main/ to create Figures C1b and C1d
 in /figures/; and uses vaccination.dta in /main/ to create Figures C2a and C2b.
 ------------------------------------------------------------------------------*/
-do "${dofiles}plots.do"
+do "${dof}plots.do"
 
 
