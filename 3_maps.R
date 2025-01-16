@@ -7,6 +7,8 @@ library(RColorBrewer)
 library(scales)
 setwd("Z:/Arquivos IFB/Paper - Covid Bolsonaro/"); gc(); rm(list=ls())
 
+# Attention! Only run after 2_master.do, otherwise dataset_redux.dta is not defined
+
 data <- merge(st_read("data/raw/BR_Municipios_2020.shp") %>% 
                 mutate(codmun7 = as.numeric(CD_MUN)) %>% 
                 select(geometry, codmun7),
