@@ -7,19 +7,19 @@ library(RColorBrewer)
 library(scales)
 setwd("Z:/Arquivos IFB/Paper - Covid Bolsonaro/"); gc(); rm(list=ls())
 
-# Attention! Only run after 2_master.do, otherwise dataset_redux.dta is not defined
+# Attention! Only run after 2_dataframe.do, otherwise data_redux.dta is not defined
 
 data <- merge(st_read("data/raw/BR_Municipios_2020.shp") %>% 
                 mutate(codmun7 = as.numeric(CD_MUN)) %>% 
                 select(geometry, codmun7),
-              read_dta("dataset_redux.dta"),
+              read_dta("data_redux.dta"),
               by = "codmun7")
 
 k <- 10000000/(6*max(data$populacao)) + 5/6
 
 p <- ggplot(data) +
   geom_sf(
-    aes(fill = y),
+    aes(fill = Y),
     color = NA
   ) + 
   scale_fill_gradientn(
@@ -32,59 +32,38 @@ p <- ggplot(data) +
   theme(
     legend.position = "inside",
     legend.position.inside = c(.2,.35),
-    legend.margin = margin(0, 0, 0, 0),
+    legend.margin = margin(5, 5, 5, 5),
     legend.background = element_rect(fill="white", color = "white"),
     legend.title = element_blank()
   ); ggsave(
-    "figures/Fig_2a.pdf",
+    "figures/Fig_1a.png",
     plot = p,
     width = 150,
     height = 160,
-    units = "mm"
+    units = "mm",
+    dpi = 1000
   )
 
 p <- ggplot(data) +
   geom_sf(
-    aes(fill = isol),
+    aes(fill = X),
     color = NA
   ) + 
   scale_fill_gradientn(
-    colors = brewer.pal(11, "Spectral")
+    colors = rev(brewer.pal(11, "Spectral"))
   ) +
   theme_void() +
   theme(
     legend.position = "inside",
     legend.position.inside = c(.2,.35),
-    legend.margin = margin(0, 0, 0, 0),
+    legend.margin = margin(5, 5, 5, 5),
     legend.background = element_rect(fill="white", color = "white"),
     legend.title = element_blank()
   ); ggsave(
-    "figures/Fig_2b.pdf",
+    "figures/Fig_1b.png",
     plot = p,
     width = 150,
     height = 160,
-    units = "mm"
-  )
-
-p <- ggplot(data) +
-  geom_sf(
-    aes(fill = del),
-    color = NA
-  ) + 
-  scale_fill_gradientn(
-    colors = brewer.pal(11, "Spectral")
-  ) +
-  theme_void() +
-  theme(
-    legend.position = "inside",
-    legend.position.inside = c(.2,.35),
-    legend.margin = margin(0, 0, 0, 0),
-    legend.background = element_rect(fill="white", color = "white"),
-    legend.title = element_blank()
-  ); ggsave(
-    "figures/Fig_2c.pdf",
-    plot = p,
-    width = 150,
-    height = 160,
-    units = "mm"
+    units = "mm",
+    dpi = 1000
   )
