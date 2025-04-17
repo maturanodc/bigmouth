@@ -5,7 +5,7 @@
 The following file details where data for the replication of Bigmouth Strikes Again can be acquired. All data is public. Once in the appropriate folders, simply execute Stata and R scripts in order. Final data can be found [here](https://doi.org/10.7910/DVN/LNZX0T).
 
 ## Glossary
-`/bsa/`: Main folder. Github zip and final data should be extracted here. In scripts, `Z:/Arquivos IFB/Paper - Covid Bolsonaro/`
+`/bsa/`: Main folder. Github zip should be extracted here. Final data should be placed here. In scripts, `Z:/Arquivos IFB/Paper - Covid Bolsonaro/`
 
 `/cen/`: Census folder. 2010 Census Microdata should be extracted here. In scripts, `Z:/Arquivos IFB/Censos Demográficos/Censo 2010/Dados/`
 
