@@ -1,8 +1,8 @@
 # ReadMe for “Bigmouth Strikes Again: Electoral Impact of Reckless Speech during a Pandemic”
 
-  Dimitri Maturano, [dimitricm@insper.edu.br](mailto:dimitricm@insper.edu.br), April 11th, 2025
+  Dimitri Maturano, [dimitricm@insper.edu.br](mailto:dimitricm@insper.edu.br), April 18th, 2025.
 
-The following file details where data for the replication of Bigmouth Strikes Again can be acquired. All data is public. Once in the appropriate folders, simply execute Stata and R scripts in order. Final data can be found [here](https://doi.org/10.7910/DVN/LNZX0T).
+The following file details where data for the replication of Bigmouth Strikes Again can be acquired. All data is public. Once in the appropriate folders, simply execute Stata and R scripts in order. Final data can be found [here](https://doi.org/10.7910/DVN/LNZX0T), and should be placed on `bsa` to run the estimation script.
 
 ## Glossary
 `/bsa/`: Main folder. Github zip should be extracted here. Final data should be placed here. In scripts, `Z:/Arquivos IFB/Paper - Covid Bolsonaro/`
@@ -13,7 +13,7 @@ The following file details where data for the replication of Bigmouth Strikes Ag
 
 `/raw/`: Raw data subfolder of `/dat/`. All data, except 2010 Census Microdata, should be extracted here. In scripts, `Z:/Arquivos IFB/Paper - Covid Bolsonaro/data/raw/`
 
-`Main` should also have `tables` and `figures` folders for the execution of scripts.
+`bsa` should also have `tables` and `figures` folders for the execution of scripts.
 
 
 ## Data (in order of apparition)
